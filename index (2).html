@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Вкусно — ресторан и доставка</title>
+  <style>
+    /* CSS тот же, что был раньше */
+    :root{
+      --bg:#fbfbfb;
+      --card:#ffffff;
+      --accent:#ff6b3d;
+      --muted:#7a7a7a;
+      --radius:14px;
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    }
+    *{box-sizing:border-box;}
+    body{margin:0;background:linear-gradient(180deg,#fff 0%, #f3f5f6 100%);color:#222;}
+    header{background:rgba(255,255,255,0.8);backdrop-filter:blur(6px);padding:18px 20px;border-bottom:1px solid rgba(0,0,0,0.06);position:sticky;top:0;z-index:10;}
+    .container{max-width:1100px;margin:0 auto;padding:0 16px;}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--accent);}
+    .logo .dot{width:10px;height:10px;background:var(--accent);border-radius:50%;display:inline-block;}
+    nav ul{display:flex;gap:12px;list-style:none;margin:0;padding:0;}
+    nav a{color:#333;text-decoration:none;padding:8px 10px;border-radius:8px;}
+    nav a:hover{background:rgba(0,0,0,0.04);}
+    .hero{padding:36px 0 28px;}
+    .hero-grid{display:grid;grid-template-columns:1fr 380px;gap:24px;align-items:center;}
+    .hero-card{background:var(--card);padding:26px;border-radius:var(--radius);box-shadow:0 6px 20px rgba(20,20,30,0.05);}
+    .hero h1{margin:0 0 8px;font-size:28px;}
+    .hero p{margin:0;color:var(--muted);}
+    .cta{display:inline-block;margin-top:14px;background:var(--accent);color:#fff;padding:10px 16px;border-radius:12px;text-decoration:none;}
+    .search{display:flex;gap:8px;margin-top:14px;}
+    .search input{flex:1;padding:10px 12px;border-radius:10px;border:1px solid #e6e6e6;}
+    .menu-section{margin:26px 0;}
+    .section-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+    .section-title h2{margin:0;}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+    .card{background:var(--card);border-radius:12px;overflow:hidden;box-shadow:0 6px 18px rgba(30,30,50,0.06);display:flex;flex-direction:column;}
+    .card img{width:100%;height:180px;object-fit:cover;display:block;}
+    .card-body{padding:12px;}
+    .card-body h3{margin:0 0 6px;font-size:18px;}
+    .card-body p{margin:0 0 10px;color:var(--muted);font-size:14px;}
+    .price-row{display:flex;align-items:center;justify-content:space-between;}
+    .price{font-weight:700;color:var(--accent);}
+    .btn{background:var(--accent);color:#fff;padding:8px 12px;border-radius:10px;text-decoration:none;font-size:14px;}
+    footer{padding:28px 0;color:var(--muted);border-top:1px solid rgba(0,0,0,0.04);margin-top:36px;}
+    .footer-grid{display:flex;justify-content:space-between;gap:18px;}
+    @media (max-width:900px){
+      .hero-grid{grid-template-columns:1fr;}
+      .grid{grid-template-columns:repeat(2,1fr);}
+    }
+    @media (max-width:560px){
+      nav ul{display:none;}
+      .grid{grid-template-columns:1fr;}
+      .hero h1{font-size:22px;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo"><span class="dot"></span> <div>Вкусно</div></div>
+      <nav>
+        <ul>
+          <li><a href="#home">Главная</a></li>
+          <li><a href="#menu">Меню</a></li>
+          <li><a href="#about">О нас</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="home" class="hero">
+      <div class="hero-grid">
+        <div class="hero-card">
+          <h1>Лучшие блюда рядом с вами</h1>
+          <p>Свежее, вкусное и быстрое — наша цель. Просмотрите меню, выберите блюдо и оформите доставку или самовывоз.</p>
+          <div class="search">
+            <input type="text" placeholder="Искать: пицца, суши, салат...">
+            <a class="cta" href="#menu">Посмотреть меню</a>
+          </div>
+        </div>
+        <div>
+          <div class="hero-card" style="padding:0;overflow:hidden">
+            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" alt="food" style="width:100%;height:100%;object-fit:cover">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="menu-section">
+      <div class="section-title">
+        <h2>Популярные блюда</h2>
+        <div style="color:var(--muted)">Найдено: 6</div>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <img src="https://img.freepik.com/free-photo/top-view-delicious-pizza-with-melted-cheese_140725-4129.jpg" alt="Пицца">
+          <div class="card-body">
+            <h3>Пицца Маргарита</h3>
+            <p>Классическая итальянская пицца с помидорами, моцареллой и базиликом.</p>
+            <div class="price-row">
+              <div class="price">₸ 2 300</div>
+              <a class="btn" href="#">Добавить</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1553621042-f6e147245754" alt="Суши">
+          <div class="card-body">
+            <h3>Сет из роллов</h3>
+            <p>Разнообразный сет: классические и авторские роллы с соусом.</p>
+            <div class="price-row">
+              <div class="price">₸ 3 800</div>
+              <a class="btn" href="#">Добавить</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="Бургер">
+          <div class="card-body">
+            <h3>Гриль-бургер</h3>
+            <p>Сочная котлета, маринованный лук, домашний соус и свежие овощи.</p>
+            <div class="price-row">
+              <div class="price">₸ 1 900</div>
+              <a class="btn" href="#">Добавить</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://img.freepik.com/free-photo/caesar-salad-with-grilled-chicken_140725-1235.jpg" alt="Салат">
+          <div class="card-body">
+            <h3>Салат Цезарь</h3>
+            <p>Классический цезарь с курицей, пармезаном и хрустящими крутонами.</p>
+            <div class="price-row">
+              <div class="price">₸ 1 600</div>
+              <a class="btn" href="#">Добавить</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://img.freepik.com/free-photo/spaghetti-carbonara-with-bacon-egg-and-parmesan_140725-1490.jpg" alt="Паста">
+          <div class="card-body">
+            <h3>Паста Карбонара</h3>
+            <p>Паста с кремовым соусом, беконом и пармезаном — насыщенно и ароматно.</p>
+            <div class="price-row">
+              <div class="price">₸ 2 100</div>
+              <a class="btn" href="#">Добавить</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://img.freepik.com/free-photo/chocolate-lava-cake-with-ice-cream_140725-1533.jpg" alt="Десерт">
+          <div class="card-body">
+            <h3>Шоколадный фондан</h3>
+            <p>Тёплый фондан с жидкой сердцевиной и шариком ванильного мороженого.</p>
+            <div class="price-row">
+              <div class="price">₸ 1 200</div>
+              <a class="btn" href="#">Добавить</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="about" style="margin-top:32px">
+      <div class="hero-card">
+        <h2>О нас</h2>
+        <p style="color:var(--muted)">Мы — небольшая команда поваров и курьеров. Готовим из свежих ингредиентов и доставляем горячие блюда быстро и аккуратно.</p>
+      </div>
+    </section>
+
+    <section id="contacts" style="margin-top:20px">
+      <div class="hero-card">
+        <h2>Контакты</h2>
+        <p style="color:var(--muted)">Телефон: <strong>+7 (700) 123-45-67</strong> • Адрес: ул. Центральная, 10</p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container footer-grid">
+        <div>© 2025 Вкусно — Все права защищены</div>
+        <div style="color:var(--muted)">Доставка: с 10:00 до 23:00</div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
